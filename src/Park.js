@@ -9,6 +9,7 @@ class Park extends Component {
   }
 
   componentDidMount() {
+    // using Object destructuring: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
     const { match, parks } = this.props;
     const park = parks.find(park => park.name === match.params.name);
 
