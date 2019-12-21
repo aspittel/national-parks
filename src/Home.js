@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LazyLoad from "react-lazyload";
+import LazyImage from "./LazyImage";
 
 const Home = ({ parks }) => {
   return (
@@ -8,10 +8,7 @@ const Home = ({ parks }) => {
       {parks.map(park => {
         return (
           <div key={park.parkCode}>
-            {/* only loads the images if they are 100px from view port */}
-            <LazyLoad height={200} offset={100}>
-              <img src={park.images[0].url} alt={park.images[0].altText} />
-            </LazyLoad>
+            <LazyImage image={park.images[0]} />
             <Link to={`/park/${park.name}`}>{park.name}</Link>
           </div>
         );
