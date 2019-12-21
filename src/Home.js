@@ -8,7 +8,7 @@ const Home = ({ parks }) => {
       {parks.map(park => {
         return (
           <div key={park.parkCode}>
-            {/* only loads the images if they are 100px from view prot, plus blurs images in */}
+            {/* only loads the images if they are 100px from view port */}
             <LazyLoad height={200} offset={100}>
               <img src={park.images[0].url} alt={park.images[0].altText} />
             </LazyLoad>
